@@ -608,9 +608,9 @@ MonoBehaviour:
   spawnCardPrefab: {fileID: 8374951088398275505, guid: d79347b626f934a72a266ae593a108ef, type: 3}
   hand: {fileID: 195197680}
   deck: {fileID: 549983201}
-  cardY: 5
-  cardXSpacing: 5
-  cardYSpacing: 5
+  cardY: 0.5
+  cardXSpacing: 0.5
+  cardYSpacing: 0.5
   cardAngle: 3
   animationSpeed: 1.04
 --- !u!1660057539 &9223372036854775807

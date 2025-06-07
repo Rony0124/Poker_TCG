@@ -100,6 +100,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a12ddd5893cb4a0392b05caf1c2b444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfo:
-    spawnAllyPrefab: {fileID: 0}
-    cardType: 0

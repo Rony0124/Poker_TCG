@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -47,7 +48,10 @@ public partial class PlayerCharacter
     private List<SpawnCard> cardsOnHand;
     private Queue<SpawnCardInfo> cardsOnDeck;
     
+    private List<SpawnCard> currentCardSelected;
+    
     private readonly int MaxCardCapacityOnHand = 4;
+    private readonly int HandCountMax = 5;
     
     private void InitializeDeck()
     {
@@ -104,19 +108,25 @@ public partial class PlayerCharacter
         return true;
     }
     
-    public void AddCard(SpawnCard pokerCard)
+    public void AddCard(SpawnCard spawnCard)
     {
-        cardsOnHand.Add(pokerCard);
+        cardsOnHand.Add(spawnCard);
         
         //덱에서 나오는 연출을 위해 위치 초기 설정
-        pokerCard.transform.SetParent(hand);
-        pokerCard.transform.localPosition = deck.transform.localPosition;
-        pokerCard.transform.localScale = Vector3.one;
+        spawnCard.transform.SetParent(hand);
+        spawnCard.transform.localPosition = deck.transform.localPosition;
+        spawnCard.transform.localScale = Vector3.one;
 
         ArrangeHand(animationSpeed);
         
         //TODO 카드 이벤트 추가는 어레인지 마치고 넣어준다
-       // StartCoroutine(ListenCardEvents(pokerCard));
+        StartCoroutine(ListenCardEvents(spawnCard));
+    }
+    
+    IEnumerator ListenCardEvents(SpawnCard spawnCard)
+    {
+        yield return new WaitForSeconds(animationSpeed);
+        spawnCard.OnClick += OnClickCard;
     }
     
     private void ArrangeHand(float duration)
