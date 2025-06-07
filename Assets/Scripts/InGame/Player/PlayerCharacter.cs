@@ -2,15 +2,10 @@ using UnityEngine;
 
 public partial class PlayerCharacter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InitializeDeck();
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DrawCards();
     }
 }

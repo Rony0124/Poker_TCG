@@ -51,6 +51,7 @@ public partial class PlayerCharacter
     
     private void InitializeDeck()
     {
+        cardsOnHand = new List<SpawnCard>();
         cardsOnDeck = new Queue<SpawnCardInfo>();
         
         var spawnCardsCache = spawnCards.ToList();
