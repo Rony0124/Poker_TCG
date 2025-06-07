@@ -41,6 +41,8 @@ MonoBehaviour:
     - Lofelt.NiceVibrations
     - Lofelt.NiceVibrations.Demo
     - MoreMountains.Tools
+    - UniRx
+    - UniRx.Examples
     - UniTask
     - UniTask.Addressables
     - UniTask.DOTween
