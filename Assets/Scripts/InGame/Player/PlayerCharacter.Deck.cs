@@ -47,7 +47,6 @@ public partial class PlayerCharacter
     
     private List<SpawnCard> cardsOnHand;
     private Queue<SpawnCardInfo> cardsOnDeck;
-    
     private List<SpawnCard> currentCardSelected;
     
     private readonly int MaxCardCapacityOnHand = 4;
@@ -57,6 +56,7 @@ public partial class PlayerCharacter
     {
         cardsOnHand = new List<SpawnCard>();
         cardsOnDeck = new Queue<SpawnCardInfo>();
+        currentCardSelected = new List<SpawnCard>();
         
         var spawnCardsCache = spawnCards.ToList();
 
